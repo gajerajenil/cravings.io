@@ -1,0 +1,267 @@
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px solid #ccc;
+    background-color: #ffffff;
+}
+
+.logo {
+    width: 150px;
+}
+
+.nav-items {
+    padding: 0px 50px;
+}
+
+.nav-items>ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-items>ul>li {
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-items>ul>li:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* LogOut Button Styles */
+.login {
+    padding: 5px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login:hover {
+    background-color: #0056b3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.login:active {
+    background-color: #003f88;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+}
+
+/* Filter Section */
+.filter {
+    display: flex;
+    justify-content: flex-end;
+    /* Align elements to the end */
+    align-items: center;
+    gap: 15px;
+    /* Space between the search and button */
+    margin: 20px 20px 40px;
+    /* Add spacing and bottom margin */
+}
+
+/* Search Container */
+.search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Space between input and search button */
+}
+
+.search-box {
+    width: 250px;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-box:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search button {
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.search button:active {
+    background-color: #003f88;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+}
+
+/* Top Rated Restaurant Button */
+.filter-btn {
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    /* Green button for contrast */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.filter-btn:active {
+    background-color: #19692c;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+}
+
+/* Search Bar Styles
+.search {
+    margin: 20px 0;
+    text-align: center;
+}
+.filter{
+    display: flex;
+}
+.filter-btn{
+    margin: 10px;
+    cursor: pointer;
+}
+.search input {
+    width: 300px;
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+} */
+
+/* Restaurant Container */
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center-aligns cards in the last row */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Restaurant Card Styles */
+.res-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 230px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.res-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.res-logo {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.res-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.res-card h4 {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .res-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .res-card {
+        width: 90%;
+    }
+}
+
+/* Shimmer Container */
+.Simmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Shimmer Card */
+.simmer-card {
+    width: 230px;
+    padding: 15px;
+    height: 300px;
+    background: linear-gradient(90deg,
+            #f0f0f0 25%,
+            #e0e0e0 50%,
+            #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/*# sourceMappingURL=/cravings.io.9ad09f98.css.map */

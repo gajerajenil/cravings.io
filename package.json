@@ -1,0 +1,31 @@
+{
+  "name": "cravings.io",
+  "version": "1.0.0",
+  "description": "Food",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": " parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gajerajenil/Cravings.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gajerajenil/Cravings.io/issues"
+  },
+  "homepage": "https://github.com/gajerajenil/Cravings.io#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.0.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^6.28.1",
+    "tailwindcss": "^4.0.3"
+  },
+  "main": "index.js"
+}
