@@ -7,7 +7,11 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+
   const [searchText, setSearchText] = useState("");
+
+  //const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
 
   useEffect(() => {
     fetchData();
@@ -19,6 +23,7 @@ const Body = () => {
     );
 
     const json = await data.json();
+    
 
     // Safely traverse the JSON to find restaurants
     const allRestaurants = json?.data?.cards
@@ -26,7 +31,7 @@ const Body = () => {
         (card) => card?.card?.card?.gridElements?.infoWithStyle?.restaurants
       )
       ?.filter(Boolean); // Remove undefined/null entries
-
+console.log(allRestaurants);
     setListOfRestaurant(allRestaurants);
     setFilteredRestaurant(allRestaurants);
   };
@@ -40,7 +45,8 @@ const Body = () => {
     <Simmer />
   ) : (
     <div className="body">
-      <div className="filter flex ">
+        <div className="filter flex ">
+          
         {/* Search Section */}
         <div className="search m-1 p-4">
           <input
@@ -61,7 +67,8 @@ const Body = () => {
           >
             Search
           </button>
-        </div>
+          </div>
+          
         <div className="search m-1 p-4 flex items-center ">
           {/* Top Rated Section */}
           <button
@@ -87,6 +94,14 @@ const Body = () => {
               to={"/restaurant/" + restaurant.info.id}
             >
               <RestaurantCard resData={restaurant.info} />
+
+              {/* if the restaurent is promoted then add  a promoted label to it
+              {restaurant.info.promoted ? (
+                <RestaurantCardPromoted resData={restaurant.info} />
+              ) : (
+                <RestaurantCard resData={restaurant.info} />
+              )} */}
+
             </Link>
           ))
         ) : (
