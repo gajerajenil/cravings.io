@@ -2,10 +2,13 @@ import Simmer from "./Simmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./ReastaurentCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
+
+  const [showIndex,setShowIndex] = useState(null)
 
   if (resInfo === null) return <Simmer />;
 
@@ -78,8 +81,14 @@ const RestaurantMenu = () => {
 
       <div>
         {/* categories Accordians */}
-        {categories.map((category) => (
-          <RestaurantCategory data={category?.card?.card} />
+        {categories.map((category,index) => (
+          <RestaurantCategory
+            key={category?.card?.card.title}
+            data={category?.card?.card}
+            showItems={index===showIndex ? true :false}
+            setShowIndex={()=>setShowIndex(index)}
+            
+          />
         ))}
       </div>
     </div>
@@ -88,23 +97,3 @@ const RestaurantMenu = () => {
 
 export default RestaurantMenu;
 
-// {/*
-//       <ul>
-//         {itemCards?.map((item, index) => (
-//           <li key={item?.id || index} className="menu-item">
-//             {/* Item image */}
-//             <img
-//               src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${item?.imageId}`}
-//               alt={item?.name}
-//             />
-//             {/* Item details */}
-//             <div className="menu-item-info">
-//               <h4>{item?.name}</h4>
-//               <p>{item?.description || "No description available."}</p>
-//               <p className="price">₹{item?.price / 100 || "Not Available"}</p>
-//             </div>
-//             {/* Add button */}
-//             <button className="add-button">ADD</button>
-//           </li>
-//         ))}
-//       </ul> */}

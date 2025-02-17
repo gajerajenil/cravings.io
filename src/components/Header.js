@@ -34,7 +34,7 @@ const Header = () => {
           </li>
           <li className="px-4 py-1">Cart</li>
           <button
-            className="px-4 bg-red-200 rounded-lg py-1 hover:bg-red-300"
+            className="px-4 bg-green-400 rounded-lg py-1 hover:bg-green-600"
             onClick={() => {
               btnNameReact === "Login"
                 ? setbtnNameReact("Logout")
