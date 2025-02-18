@@ -3,9 +3,10 @@ import ItemList from "./ItemList";
 
 const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
 
-  const handleClick = () => {   
-    setShowIndex();
-}
+  const handleClick = () => {
+    setShowIndex((prevIndex) => (prevIndex === data.title ? null : data.title));
+  };
+
 
   return (
     <div>

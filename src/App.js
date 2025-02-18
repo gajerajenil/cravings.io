@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./components/Header";
@@ -8,6 +8,7 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Contact from "./components/Contact";
 import Grocery from "./components/Grocery";
+import UserContext from "./utils/UserContext";
 
 //chunking
 //code spliting
@@ -16,12 +17,10 @@ import Grocery from "./components/Grocery";
 //on demand loading
 //dynamic import
 
-const Grocery = lazy(()=> import("./components/Grocery"))
+const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import("./components/About"));
 const Contact = lazy(() => import("./components/Contact"));
 const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
-
-
 
 const Loader = () => (
   <div className="loader">
@@ -31,16 +30,28 @@ const Loader = () => (
 );
 
 const AppLayout = () => {
+  const [userName, setUserName] = useState();
+
+  useEffect(() => {
+    const data = {
+      name: "Jenil Gajera",
+    };
+    setUserName(data.name);
+  });
+
   return (
-    <div className="app">
-      <Header />
-      <Suspense fallback={<Loader/>}>
-        <Outlet />
-      </Suspense>
-    </div>
+    <UserContext.Provider value={{ LoggedInUser: userName }}>
+      <div className="app">
+        <Header />
+        <Suspense fallback={<Loader />}>
+          <UserContext.Provider value={{ LoggedInUser: "Unknown" }}>
+            <Outlet />
+          </UserContext.Provider>
+        </Suspense>
+      </div>
+    </UserContext.Provider>
   );
 };
-
 
 // Define Routes
 const appRouter = createBrowserRouter([
@@ -65,7 +76,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/grocery",
-        element: <Grocery />  ,
+        element: <Grocery />,
         errorElement: <Error />,
       },
       {

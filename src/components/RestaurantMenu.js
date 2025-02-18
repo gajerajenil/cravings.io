@@ -81,13 +81,12 @@ const RestaurantMenu = () => {
 
       <div>
         {/* categories Accordians */}
-        {categories.map((category,index) => (
+        {categories.map((category) => (
           <RestaurantCategory
             key={category?.card?.card.title}
             data={category?.card?.card}
-            showItems={index===showIndex ? true :false}
-            setShowIndex={()=>setShowIndex(index)}
-            
+            showItems={showIndex === category?.card?.card.title}
+            setShowIndex={setShowIndex}
           />
         ))}
       </div>
