@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import logo from "../Images/logo.png"
 
 const Header = () => {
   const [btnNameReact, setbtnNameReact] = useState("Login");
@@ -17,7 +18,7 @@ const Header = () => {
   return (
     <div className="flex justify-between bg-blue-100 shadow-lg">
       <div className="logo-container">
-        <img className="w-36 h-23.5" src={LOGO_URL} alt="Logo" />
+        <img className="wx-auto px-5 h-20" src={logo} alt="Logo" />
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 py-1 m-4 items-center space-x-6">
@@ -41,7 +42,7 @@ const Header = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-10 h-10 text-orange-500"
+                className="w-10 h-10 text-green-500"
               >
                 <path d="M9 20c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm9 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7 4h14l-1.34 6.39A3.01 3.01 0 0 1 16.78 13H8.79l-.6 3h11.21a1 1 0 1 1 0 2H7a1 1 0 0 1-1-.78L4.22 4H2a1 1 0 1 1 0-2h3a1 1 0 0 1 1 .78L7 4zm11.87 6L20 6H8.41l1.33 6H17.87z" />
               </svg>
@@ -55,7 +56,7 @@ const Header = () => {
             </Link>
           </li>
           <button
-            className="px-4 bg-green-400 rounded-lg py-1 hover:bg-green-600"
+            className="px-4 bg-red-400 rounded-lg py-1 hover:bg-red-500"
             onClick={() =>
               setbtnNameReact(btnNameReact === "Login" ? "Logout" : "Login")
             }

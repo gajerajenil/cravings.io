@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
 import Error from "./components/Error";
+import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Contact from "./components/Contact";
 import Grocery from "./components/Grocery";
@@ -79,6 +80,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/grocery",
         element: <Grocery />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
         errorElement: <Error />,
       },
       {
