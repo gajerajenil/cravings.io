@@ -9,6 +9,8 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Contact from "./components/Contact";
 import Grocery from "./components/Grocery";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 //chunking
 //code spliting
@@ -40,16 +42,16 @@ const AppLayout = () => {
   });
 
   return (
-    <UserContext.Provider value={{ LoggedInUser: userName }}>
-      <div className="app">
-        <Header />
-        <Suspense fallback={<Loader />}>
-          <UserContext.Provider value={{ LoggedInUser: "Unknown" }}>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ LoggedInUser: userName }}>
+        <div className="app">
+          <Header />
+          <Suspense fallback={<Loader />}>
             <Outlet />
-          </UserContext.Provider>
-        </Suspense>
-      </div>
-    </UserContext.Provider>
+          </Suspense>
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
