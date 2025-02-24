@@ -77,11 +77,11 @@ const appRouter = createBrowserRouter([
         element: <Contact />,
         errorElement: <Error />,
       },
-      {
-        path: "/grocery",
-        element: <Grocery />,
-        errorElement: <Error />,
-      },
+      // {
+      //   path: "/grocery",
+      //   element: <Grocery />,
+      //   errorElement: <Error />,
+      // },
       {
         path: "/cart",
         element: <Cart />,

@@ -32,9 +32,9 @@ const Header = () => {
           <li>
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/grocery">Grocery</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/cart" className="relative flex items-center">
               {/* Food-related Cart Icon */}
